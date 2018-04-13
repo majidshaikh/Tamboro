@@ -1,6 +1,6 @@
-Tamboro Demo
+# Tamboro Demo
 
-This repository contains solution for the given four questions in core java.
+## This repository contains solution for the given four questions in core java.
 
 Question 1: Colors can be represented using cylindrical coordinates, in a model named HSV. Say you have a very long vector of HSV color tuples (unordered) defned as (h, s, v) where h is the hue in degrees [0°, 360°), s and v are saturation and value, respectively, in percentage. Your objective is to obtain all pairs of complementary colors from this vector. The complementary color of (h, s, v) is defned as (h + 180°, s, v). How would you implement a function to perform this operation in the most optimized way? 
 
@@ -15,13 +15,13 @@ Question 3: Can you implement a “computer” player for the game above?
 Question 4: What do you feel you do best at work?
 
 
-Getting Started
+## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Prerequisites
+## Prerequisites
 You will need jdk1.6 or above
 
-Installing
+## Installing
 
 Clone the project to your local directory and compile all java classes.Below are the main classes that needs to be executed:
 Question 1: HSVImpl.java
@@ -34,7 +34,7 @@ Note*: Answer for question 4 is attached in a document.
 
 
 Built With:
-Java : 1.8
+## Java : 1.8
 
 
 
