@@ -1,4 +1,4 @@
-# Tamboro Demo
+# Tamboro
 
 ## This repository contains solution for the given four questions in core java.
 
