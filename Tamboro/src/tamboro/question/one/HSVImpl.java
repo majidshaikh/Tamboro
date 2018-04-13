@@ -18,8 +18,11 @@ public class HSVImpl {
   public static void main(String[] args) {
 
     HSVImpl impl = new HSVImpl();
-    List<HSV[]> colours = impl.getComplimentoryColours(impl.getColours());
-
+    /*
+     *   get the input from getColours() and passing to getComplimentoryColours()
+     */
+    List<HSV[]> colours = impl.getComplimentaryColours(impl.getColours());
+    
     for (HSV[] pair : colours) {
       System.out.print(pair[0] + " " + pair[1]);
       System.out.println("");
@@ -27,16 +30,17 @@ public class HSVImpl {
 
   }
 
-  public List<HSV[]> getComplimentoryColours(Vector<HSV> colours) {
+  public List<HSV[]> getComplimentaryColours(Vector<HSV> colours) {
 
     for (HSV colour : colours) {
       int min = colour.getHue() - 180;
       int max = colour.getHue() + 180;
 
-      if (validateHue(min))
+      if (validateHue(min)) {
         searchColour(min, colour);
-      else if (validateHue(max))
-        searchColour(max, colour);    
+      } else if (validateHue(max)) {
+        searchColour(max, colour);
+      }
 
     }
     return complimentoryColours;
@@ -46,18 +50,21 @@ public class HSVImpl {
     String getKey = hue + "-" + colour.getSaturation() + "-" + colour.getValue();
     String putKey = colour.getHue() + "-" + colour.getSaturation() + "-" + colour.getValue();
     HSV pairs[] = new HSV[2];
-    if (map.containsKey(getKey)) {
-      HSV compVal = map.get(getKey);
+    HSV compVal = null;
+    if (null != (compVal = map.get(getKey))) {
       if (compVal.equals(colour)) {
         pairs[0] = compVal;
         pairs[1] = colour;
+        // just to make sure that the complimentary colours are passed as pairs
         complimentoryColours.add(pairs);
-      } else
+      } else {
         map.put(putKey, colour);
-      
-    } else
+      }
+
+    } else {
       map.put(putKey, colour);
-    
+    }
+
   }
 
   public boolean validateHue(int i) {
@@ -67,6 +74,7 @@ public class HSVImpl {
   public Vector<HSV> getColours() {
     Vector<HSV> input = new Vector<HSV>();
     input.add(new HSV(195, 11, 12));
+    input.add(new HSV(37, 13, 76));
     input.add(new HSV(15, 13, 76));
     input.add(new HSV(15, 11, 12));
     input.add(new HSV(195, 13, 76));
